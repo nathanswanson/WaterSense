@@ -57,6 +57,7 @@ public class WaterSense
     {
     	
         // some example code
+    	System.out.print("test");
     }
     
     
