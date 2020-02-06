@@ -1,0 +1,16 @@
+[
+{
+  "modid": "watersense",
+  "name": "Water Sense",
+  "description": "Redefining water physics in minecraft",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["AkaliSucks"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

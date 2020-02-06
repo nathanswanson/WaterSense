@@ -1,0 +1,15 @@
+{
+    "variants": {
+    
+           "size=1": { "model": "watersense:waterws_1" },
+           "size=2": { "model": "watersense:waterws_2" },
+           "size=3": { "model": "watersense:waterws_3" },
+           "size=4": { "model": "watersense:waterws_4" },
+           "size=5": { "model": "watersense:waterws_5" },
+           "size=6": { "model": "watersense:waterws_6" },
+           "size=7": { "model": "watersense:waterws_7" },
+           "size=8": { "model": "watersense:waterws_8" }
+
+        
+    }
+}
