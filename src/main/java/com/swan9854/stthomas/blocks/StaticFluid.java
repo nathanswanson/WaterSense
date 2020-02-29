@@ -1,5 +1,7 @@
 package com.swan9854.stthomas.blocks;
 
+import java.util.Random;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -131,9 +133,11 @@ public class StaticFluid extends BlockTileEntity<TileEntityWater> {
     		{
     			try
     			{
-    				worldIn.setBlockState(pos, worldIn.getBlockState(pos).withProperty(StaticFluid.AGE, i+1));
-    				if(i == 1)
+    				worldIn.setBlockState(pos, worldIn.getBlockState(pos).withProperty(StaticFluid.AGE, i+1), 2);
+    				if(tile.getCount() <= 0)
     					worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+    				
+    					
     			} catch(IllegalArgumentException e)
     			{
     				System.out.print(pos);
@@ -153,17 +157,13 @@ public class StaticFluid extends BlockTileEntity<TileEntityWater> {
     
     public void removeWater(int amount, World worldIn, BlockPos pos)
     {
-    	
     	TileEntityWater tile = getTileEntity(worldIn, pos);
     	if(tile == null)
     		throw new NullPointerException();
     	
     	tile.decrementCount(amount);
     	int val = tile.getCount();
-    	if(tile.getCount() <= 0)
-    		worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
-    	else
-    		updateModel(worldIn,pos);
+		updateModel(worldIn,pos);
     }
     
 	@Override

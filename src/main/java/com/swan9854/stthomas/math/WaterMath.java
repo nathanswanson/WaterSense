@@ -49,7 +49,8 @@ public class WaterMath {
 		// TODO Auto-generated method stub
 		boolean[][] map = water.getMap();
 		int fraction = amount / water.getSizeOfWater();
-		
+	//	System.out.println("size: " + water.getSizeOfWater());
+	//	System.out.print("with a fraction of..." + fraction);
 		for(int x = 0; x < map.length; x++)
 			for(int y =0; y < map[0].length;y++)
 			{

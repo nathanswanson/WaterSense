@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.swan9854.stthomas.WaterSense;
 import com.swan9854.stthomas.blocks.StaticFluid;
 import com.swan9854.stthomas.math.WaterMath;
+import com.swan9854.stthomas.tileEntity.TileEntityWater;
 import com.swan9854.stthomas.utils.BlockMap;
 
 import net.minecraft.block.Block;
@@ -55,11 +56,15 @@ public class DebuggerItem extends Item {
 	        		IBlockState ibs = worldIn.getBlockState(pos);
 	                Block block = ibs.getBlock();
 		        	playerIn.sendMessage(new TextComponentTranslation(block.getLocalizedName() + pos));
-		        	
 		        	if(worldIn.getBlockState(pos).getBlock().equals(WaterSense.water))
 		        	{
+			        	TileEntityWater tile = ((StaticFluid) block).getTileEntity(worldIn, pos);
+		        		
 		        		BlockMap map = WaterMath.scanwater(new BlockMap(pos), worldIn);
 		        		WaterMath.RemoveWaterFromBody(map, 10000, worldIn);
+		        		
+		        		playerIn.sendMessage(new TextComponentTranslation("currently the tile count is at... " + worldIn.getBlockState(pos).getValue(StaticFluid.AGE)));
+		        		playerIn.sendMessage(new TextComponentTranslation("currently the water count is at... " + tile.getCount()));
 		        	}
 		        	
 		        	
